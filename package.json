@@ -10,11 +10,12 @@
     "update-test": "npm run test -- -u",
     "build": "webpack",
     "dev": "webpack-dev-server",
-    "lint": "standard",
+    "lint": "eslint js/**/*.js webpack.config.js",
     "watch": "webpack --watch"
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "eslint-plugin-node": "^4.2.2",
     "express": "^4.15.2",
     "history": "^4.4.0",
     "lodash": "^4.17.4",
@@ -45,6 +46,7 @@
     "eslint-config-standard-jsx": "^4.0.1",
     "eslint-config-standard-react": "^4.3.0",
     "eslint-loader": "^1.7.1",
+    "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^6.10.3",
     "eslint-plugin-standard": "^3.0.1",
