@@ -1,7 +1,6 @@
 import React from 'react'
-import { render } from 'react-dom'
-import '../public/normalize.css'
-import '../public/style.css'
+import ReactDOM from 'react-dom'
+import MyTitle from './MyTitle'
 
 var MyFirstComponent = React.createClass({
   render: function () {
