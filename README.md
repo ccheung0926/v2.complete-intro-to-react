@@ -34,3 +34,7 @@ state:
 React: 
 - two-way-data binding is not free in React unlilke Angular
 - eliminating time component compare to jQuery
+
+Jest (Unit Testing)
+- renders your component out, it dumps that to a file and then it just compares against that file in the future
+- Jest find .spec.js or .test.js for you automatically, example: search.spec.js
