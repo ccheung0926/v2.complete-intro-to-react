@@ -1,19 +1,19 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { HashRouter, Match } from 'react-router'
+import { BrowserRouter, Match } from 'react-router'
 import Landing from './Landing'
 import Search from './Search'
 
 const App = React.createClass({
   render () {
     return (
-      <HashRouter>
+      <BrowserRouter>
         {/* this is how you comment */}
         <div className='app'>
           <Match exactly pattern='/' component={Landing} />
           <Match pattern='/search' component={Search} />
         </div>
-      </HashRouter>
+      </BrowserRouter>
     )
   }
 })

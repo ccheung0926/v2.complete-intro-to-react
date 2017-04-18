@@ -12,5 +12,8 @@ MIT
 
 [gh-page]: http://btholt.github.io/complete-intro-to-react/
 
-
+Side Notes from tutorial:
 npm run lint -s -- --fix <-- to fix syntax on lint
+
+webpack.config.js:
+- 'historyApiFallback': true -- reroute 404 to homepage
