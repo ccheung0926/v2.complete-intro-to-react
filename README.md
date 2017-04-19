@@ -14,6 +14,7 @@ MIT
 
 Side Notes from tutorial:
 npm run lint -s -- --fix <-- to fix syntax on lint
+NODE_ENV=test jest -u and NODE_ENV=test jest
 
 webpack.config.js:
 - 'historyApiFallback': true -- reroute 404 to homepage
@@ -38,3 +39,4 @@ React:
 Jest (Unit Testing)
 - renders your component out, it dumps that to a file and then it just compares against that file in the future
 - Jest find .spec.js or .test.js for you automatically, example: search.spec.js
+-shallow is going to render out everything from a componenet, but it is not going to go any deeper than that. It goes til hitting another component, it will be going to render another component at all
