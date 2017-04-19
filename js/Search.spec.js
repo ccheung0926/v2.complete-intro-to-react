@@ -19,5 +19,5 @@ test('Search should render a ShowCard for each show', () => {
 test('Search should render correct amount of shows based on search', () => {
   const searchWord = 'house'
   const component = shallow(<Search />)
-  component.find('input').simulate('change', {target:{value: searchWord}})
+  component.find('input').simulate('change', {target: {value: searchWord}})
 })
