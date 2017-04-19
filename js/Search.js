@@ -1,6 +1,6 @@
 import React from 'react'
 import ShowCard from './ShowCard'
-const { arrayOf, shape, string } = React.propTypes
+const { arrayOf, shape, string } = React.PropTypes
 
 const Search = React.createClass({
   propTypes: {
