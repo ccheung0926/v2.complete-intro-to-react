@@ -41,3 +41,9 @@ Jest (Unit Testing)
 - renders your component out, it dumps that to a file and then it just compares against that file in the future
 - Jest find .spec.js or .test.js for you automatically, example: search.spec.js
 -shallow is going to render out everything from a componenet, but it is not going to go any deeper than that. It goes til hitting another component, it will be going to render another component at all
+
+
+- ComponentDidMount--call it right after it gets put into the DOM, does not get called in Node environment
+- ComponentWillMount-- get called in Node environment
+- ComponentWillUnmount - exclusively for cleanup, if you put any dom listeners on you have to go remove them. You need to clean up before removing that component
+- shoudComponentUpdate - exclsuively used for performance reason, Brian Holt rarely uses it. The way that reacts tells if the component used to update as it looks at its state. If the state has not been modified for the last time it saw it, the it sees as nothing changed. Re-render method is not rendered because it doesnt see as state changed
