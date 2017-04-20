@@ -35,6 +35,7 @@ state:
 React: 
 - two-way-data binding is not free in React unlilke Angular
 - eliminating time component compare to jQuery
+- React ES6 does not have PropType, can only define protype outside of the class extend
 
 Jest (Unit Testing)
 - renders your component out, it dumps that to a file and then it just compares against that file in the future
