@@ -47,3 +47,6 @@ Jest (Unit Testing)
 - ComponentWillMount-- get called in Node environment
 - ComponentWillUnmount - exclusively for cleanup, if you put any dom listeners on you have to go remove them. You need to clean up before removing that component
 - shoudComponentUpdate - exclsuively used for performance reason, Brian Holt rarely uses it. The way that reacts tells if the component used to update as it looks at its state. If the state has not been modified for the last time it saw it, the it sees as nothing changed. Re-render method is not rendered because it doesnt see as state changed
+
+- context is available everywhere inside of React app. If you write context in one componenet, and another component is reading from the same context. Is global for apps.
+- it is recommended to use context with redux

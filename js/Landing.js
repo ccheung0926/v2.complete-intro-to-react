@@ -1,18 +1,32 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
-const { string } = React.PropTypes
+import { setSearchTerm } from './actionCreators'
+const { string, func, object } = React.PropTypes
 
 const Landing = React.createClass({
+  contextTypes: {
+    router: object
+  },
   propTypes: {
-    searchTerm: string
+    searchTerm: string,
+    dispatchSetSearchTerm: func
+  },
+  handleSearchTermChange (event) {
+    this.props.dispatchSetSearchTerm(event.target.value)
+  },
+  handleSearchSubmit (event) {
+    event.preventDefault()
+    this.context.router.transitionTo('/search')
   },
   render () {
     return (
       <div className='landing'>
         <h1>svideo</h1>
-        <input value={this.props.searchTerm} type='text' placeholder='Search' />
-        <Link to='/search'>or Broswer All</Link>
+        <form onSubmit={this.handleSearchSubmit}>
+          <input onChange={this.handleSearchTermChange} value={this.props.searchTerm} type='text' placeholder='Search' />
+        </form>
+        <Link to='/search'>or Browse All</Link>
       </div>
     )
   }
@@ -23,5 +37,14 @@ const mapStateToProps = (state) => {
     searchTerm: state.searchTerm
   }
 }
-/* calling connect with mapStateToProps. Connect creates a new function then immediately invoking on landing */
-export default connect(mapStateToProps)(Landing)
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatchSetSearchTerm (searchTerm) {
+      dispatch(setSearchTerm(searchTerm))
+    }
+  }
+}
+
+/* calling connect with mapStateToProps and mapDispatchToProps. Connect creates a new function then immediately invoking on landing */
+export default connect(mapStateToProps, mapDispatchToProps)(Landing)
