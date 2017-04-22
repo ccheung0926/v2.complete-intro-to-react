@@ -4,7 +4,7 @@ import { shallow, render } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
 import store from './store'
 import { setSearchTerm } from './actionCreators'
-import { Unwrapped as UnwrappedSearch } from './Search'
+import Search, { Unwrapped as UnwrappedSearch } from './Search'
 import ShowCard from './ShowCard'
 import preload from '../public/data.json'
 
@@ -15,13 +15,17 @@ test('Search snapshot test', () => {
 })
 
 test('Search should render a ShowCard for each show', () => {
-  const component = shallow(<Search />)
+  const component = shallow(<UnwrappedSearch searchTerm='' shows={preload.shows} />)
   expect(component.find(ShowCard).length).toEqual(preload.shows.length)
 })
 
-// test('Search should render correct amount of shows based on search', () => {
-//   const searchWord = 'house'
-//   const component = shallow(<Search />)
-//   component.find('input').simulate('change', {target: {value: searchWord}})
-// })
+test('Search should render correct amount of shows based on search', () => {
+  const searchWord = 'house'
+  store.dispatch(setSearchTerm(searchWord))
+  const component = render(<Provider store={store}><Search shows={preload.shows} /></Provider>)
+  const showCount = preload.shows.filter((show) => `${show.title} ${show.description}`.toUpperCase().indexOf(searchWord.toUpperCase()) >= 0).length
+  expect(component.find('.show-card').length).toEqual(showCount)
+  // const component = shallow(<Search />)
+  // component.find('input').simulate('change', {target: {value: searchWord}})
+})
 
