@@ -53,3 +53,7 @@ Jest (Unit Testing)
 - Thunk is basically just a function that allows you to do things later instead of now.
 
 Reason for universal rendering -- we want to send down the complete markup on the website, the markup is not interactive because react is not yet sent
+
+babelrc--
+add module to server-- to compile es6 -> es5 in node
+server.js file itself is not transpiled, so we have to write it in such a way that we don't require babel. Babel node is very slow in production. Don't use it!
