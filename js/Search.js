@@ -38,4 +38,7 @@ const mapStateToProps = (state) => {
   }
 }
 
+// this variable is for unit testing purpose
+export const Unwrapped = Search
+
 export default connect(mapStateToProps)(Search)
