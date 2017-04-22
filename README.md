@@ -50,3 +50,4 @@ Jest (Unit Testing)
 
 - context is available everywhere inside of React app. If you write context in one componenet, and another component is reading from the same context. Is global for apps.
 - it is recommended to use context with redux
+- Thunk is basically just a function that allows you to do things later instead of now.
