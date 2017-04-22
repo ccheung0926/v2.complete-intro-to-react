@@ -28,4 +28,3 @@ test('Search should render correct amount of shows based on search', () => {
   // const component = shallow(<Search />)
   // component.find('input').simulate('change', {target: {value: searchWord}})
 })
-
